@@ -15,13 +15,13 @@
   </thead>
 
   <tbody>
-    <% @portfolios.each do |portfolio| %>
+    <% @portfolios_item.each do |portfolio| %>
       <tr>
         <td><%= portfolio.title %></td>
         <td><%= portfolio.subtitle %></td>
         <td><%= portfolio.body %></td>
-        <td><%= portfolio.main_image %></td>
-        <td><%= portfolio.thumb_image %></td>
+        <td><%= image_tag portfolio.main_image %></td>
+        <td><%= image_tag portfolio.thumb_image %></td>
         <td><%= link_to 'Show', portfolio %></td>
         <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
         <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
