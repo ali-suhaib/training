@@ -1,6 +1,6 @@
 <h1> "This is show"</h1>
 
-<p> <%= image_tag @portfolios_item.main_image %> </p>
+<p> <%= image_tag @portfolios_item.main_image unless @portfolios_item.main_image.nil? %> </p>
 
 <p> <%= @portfolios_item.title %> </p>
 <%= @portfolios_item.subtitle %>
