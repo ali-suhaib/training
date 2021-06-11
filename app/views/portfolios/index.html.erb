@@ -13,6 +13,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <%= link_to "Create new item ", new_portfolio_url %>
 
   <tbody>
     <% @portfolios_item.each do |portfolio| %>
@@ -22,6 +23,7 @@
         <td><%= portfolio.body %></td>
         <td><%# image_tag portfolio.main_image unless portfolio.main_image.nil? %></td>
         <td><%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %></td>
+        <td> <%= link_to "Edit", edit_portfolio_path(portfolio.id) %> </td>
       </tr>
     <% end %>
   </tbody>
