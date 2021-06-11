@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
 
   # GET /portfolios or /portfolios.json
   def index
-    @portfolios_item = Portfolio.all
+    @portfolios_items = Portfolio.all
   end
 
   def new
@@ -31,10 +31,6 @@ class PortfoliosController < ApplicationController
       @portfolios_item = Portfolio.find(params[:id])
   end
 
-  def set_portfolio
-
-  end
-
   def update
     @portfolios_item = Portfolio.find(params[:id])
     respond_to do |format|
@@ -46,6 +42,13 @@ class PortfoliosController < ApplicationController
         format.json { render json: @portfolios_item.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+  end
+
+  def set_portfolio
+    @portfolios_item = Portfolio.find(params[:id])
   end
 
 end
