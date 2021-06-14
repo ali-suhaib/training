@@ -1,0 +1,8 @@
+<h1> "This is show"</h1>
+
+<p> <%= image_tag @portfolios_item.main_image unless @portfolios_item.main_image.nil? %> </p>
+
+<p> <%= @portfolios_item.title %> </p>
+<%= @portfolios_item.subtitle %>
+<%= @portfolios_item.body %>
+<p> <%= image_tag @portfolios_item.thumb_image unless @portfolios_item.thumb_image.nil? %> </p>
