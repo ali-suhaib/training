@@ -1,14 +1,16 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-  include DeviseWhitelist
-  include SetSource
-  include CurrentUserConcern
+module CurrentUserConcern
+extend ActiveSupport::Concern
 
   def current_user
-    super || OpenStruct.new(name: "Guest user",
+    super || guest_user
+  end
+
+  def guest_user
+    OpenStruct.new(name: "Guest user",
                              first_name: "Guest",
                               last_name: "user",
                               email:"guestuser@fliclicks.com"
                               )
   end
+
 end
